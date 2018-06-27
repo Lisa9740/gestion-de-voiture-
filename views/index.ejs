@@ -9,33 +9,84 @@
 
 <header>
     <% include partials/header %>
-</header>
+        </header>
+    
+        <main>
+            <div class="jumbotron">
+                <h1>Gestion de voiture</h1>
+    
+    
+                <p>
+                    <%voitures.forEach(function(datas){%>
+                        <ul class="list-group mt-2">
+                            <li class="list-group-item disabled">
+                                <%= datas.marque%>
+                            </li>
+                            <li class="list-group-item">
+                                <%= datas.img%>
+                            </li>
+                            <li class="list-group-item">
+                                <%= datas.puissance%>
+                            </li>
+                            <li class="list-group-item">
+                                <%= datas.motorisation%>
+                            </li>
+                            <li class="list-group-item">
+                                <%= datas.prix%>
+                            </li>
+                            <!-- <li class="list-group-item"><%= datas.couleur%></li> -->
+                            <li class="list-group-item">
+                                <%= datas.nbporte%>
+                            </li>
+                            <li class="list-group-item">
+                                <%= datas.nbplace%>
+                            </li>
+                        </ul>
+                
+                        
+                        <% }); %>
 
-<main>
-    <div class="jumbotron">
-        <h1>Gestion de voiture</h1>
-        <p>
-            <%voitures.forEach(function(datas){%>
-                <ul class="list-group mt-2">
-                    <li class="list-group-item disabled"><%= datas.marque%></li>
-                    <li class="list-group-item"><%= datas.img%></li>
-                    <li class="list-group-item"><%= datas.puissance%></li>
-                    <li class="list-group-item"><%= datas.motorisation%></li>
-                    <li class="list-group-item"><%= datas.prix%></li>
-                    <!-- <li class="list-group-item"><%= datas.couleur%></li> -->
-                    <li class="list-group-item"><%= datas.nbporte%></li>
-                    <li class="list-group-item"><%= datas.nbplace%></li>
-                  </ul>
-                
-                
-            </p> <% }); %>
-        </p>
+                        
+                </p>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Ajouter
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ajouter une voiture</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ">
+            <input type="text" id="marque" class="form-control mt-2" placeholder="marque" aria-label="marque" aria-describedby="basic-addon1">
+            <input type="text" id="img" class="form-control mt-2" placeholder="img" aria-label="img" aria-describedby="basic-addon1">
+            <input type="text" id="puissance" class="form-control mt-2" placeholder="puissance" aria-label="puissance" aria-describedby="basic-addon1">
+            <input type="text" id="motorisation" class="form-control mt-2" placeholder="motorisation" aria-label="motorisation" aria-describedby="basic-addon1">
+            <input type="text" id="prix" class="form-control mt-2" placeholder="prix" aria-label="prix" aria-describedby="basic-addon1">
+            <input type="text" id="couleur" class="form-control mt-2" placeholder="couleur" aria-label="couleur" aria-describedby="basic-addon1">
+            <input type="text" id="nbporte" class="form-control mt-2" placeholder="nbporte" aria-label="nbporte" aria-describedby="basic-addon1">
+            <input type="text" id="nbplace" class="form-control mt-2" placeholder="nbplace" aria-label="nbplace" aria-describedby="basic-addon1">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Ajouter</button>
+        </div>
+      </div>
     </div>
-</main>
-<script src= "script.js"></script>
-<footer>
-    <% include partials/footer %>
-</footer>
+  </div>
+            </div>
+        </main>
+        <script src="script.js"></script>
+        <footer>
+            <% include partials/footer %>
+        </footer>
 
 </body>
 </html>

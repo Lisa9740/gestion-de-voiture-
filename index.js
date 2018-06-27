@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-var port = 3009;
+var port = 3008;
 var bodyParser = require('body-parser');
 const mongodb = require('mongodb');
 
@@ -37,7 +37,38 @@ function get_voitures(cb){
     });
 
 }
-//fonction pour ajouter des données à la liste des voitures 
+app.post('/ajoutdonnees',function(req,res){
+    
+//Ajout d'une nouvelle voiture
+
+
+    var marque = req.body.marque;
+    var img = req.body.img;
+    var puissance = req.body.puissance;
+    var motorisation = req.body.motorisation;
+    var prix = req.body.prix;
+    var couleur = req.body.couleur;
+    var nbporte = req.body.nbporte;
+    var nbplace = req.body.nbplace;
+    
+    MongoClient.connect(url, function (err, db) {
+        if (err) throw err;
+        var dbo = db.db("concession");
+        dbo.collection("voitures").insertOne({marque:marque, img:img, puissance:puissance, motorisation:motorisation, prix:prix, couleur:couleur, nbporte:nbporte, nbplace:nbplace},function (err, result) {
+            
+            if (err){
+                res.send("error");
+            }else {
+                res.send("success");
+            }
+        }),
+            
+            db.close();
+        });
+
+});
+
+
 
 
 
