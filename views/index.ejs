@@ -14,10 +14,32 @@
 <main>
     <div class="jumbotron">
         <h1>Gestion de voiture</h1>
+
+        
         <p>
             <%voitures.forEach(function(datas){%>
-                <%= datas.marque%>
-            </p> <% }); %>
+                <ul class="list-group mt-2">
+                    <li class="list-group-item disabled"><%= datas.marque%></li>
+                    <li class="list-group-item"><%= datas.img%></li>
+                    <li class="list-group-item"><%= datas.puissance%></li>
+                    <li class="list-group-item"><%= datas.motorisation%></li>
+                    <li class="list-group-item"><%= datas.prix%></li>
+                    <!-- <li class="list-group-item"><%= datas.couleur%></li> -->
+                    <li class="list-group-item"><%= datas.nbporte%></li>
+                    <li class="list-group-item"><%= datas.nbplace%></li>
+                  </ul>
+                
+                
+                
+                
+                
+                
+                
+                
+
+
+
+             <% }); %>
         </p>
     </div>
 </main>

@@ -2,14 +2,14 @@
     
        
     {
-            "nom": "audi A1",
-            "lien image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9cdJEbI27pxbdZmhvPu-mtPikoTSSqRcxjehvApvumuEpdHiEnQ",
+            "marque": "audi A1",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9cdJEbI27pxbdZmhvPu-mtPikoTSSqRcxjehvApvumuEpdHiEnQ",
             "Puissance":"60 kW (82 ch)",
             "motorisation":"Super schwefelfrei ROZ 95",
             "prix":"18 180,00 EUR",
             "couleur":"noir",
-            "nombre de porte":"2",
-            "nombre de place":"5"
+            "nbporte":"2 portes",
+            "nbplace":"5 places"
         },
         {
             "nom": "audi A3",
