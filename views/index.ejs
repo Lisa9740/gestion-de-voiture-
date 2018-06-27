@@ -14,7 +14,11 @@
 <main>
     <div class="jumbotron">
         <h1>Gestion de voiture</h1>
-        <p>Welcome to templating using EJS</p>
+        <p>
+            <%voitures.forEach(function(datas){%>
+                <%= datas.marque%>
+            </p> <% }); %>
+        </p>
     </div>
 </main>
 

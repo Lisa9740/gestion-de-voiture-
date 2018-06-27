@@ -11,11 +11,32 @@ var MongoClient = require('mongodb').MongoClient
 
 
 app.use(bodyParser.urlencoded({extended: true}));
- 
+
+// route page accueil  
 app.get('/', function(req,res){
-    res.render('index');
+    get_voitures(function(voitures){
+        //console.log(hotels);
+        res.render('index', {
+            voitures : voitures
+        });
+    
 });
-   
+});
+
+  // fonction pour retourner la liste des voitures 
+function get_voitures(cb){
+    MongoClient.connect(url, function (err, db) {
+        if (err) throw err;
+        var dbo = db.db("concession");
+        dbo.collection("voitures").find({}).toArray(function (err, result) {
+            if (err) throw err;
+      
+            cb(result);
+            db.close();
+        });
+    });
+
+}
 
 
 app.use(express.static('static'));
