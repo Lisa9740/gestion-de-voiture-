@@ -54,18 +54,19 @@ app.post('/ajoutdonnees',function(req,res){
     MongoClient.connect(url, function (err, db) {
         if (err) throw err;
         var dbo = db.db("concession");
-        dbo.collection("voitures").insertOne({marque:marque, img:img, puissance:puissance, motorisation:motorisation, prix:prix, couleur:couleur, nbporte:nbporte, nbplace:nbplace},function (err, result) {
+        dbo.collection("voitures").insertOne({marque, img, puissance, motorisation, prix, couleur, nbporte, nbplace}),function (err, result) {
             
-            if (err){
-                res.send("error");
-            }else {
-                res.send("success");
-            }
-        }),
+        if (err) throw err;
+
+        res.send(result);
+        
             
             db.close();
-        });
+        }
+    
 
+
+})
 });
 
 

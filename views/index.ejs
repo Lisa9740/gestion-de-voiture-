@@ -19,27 +19,27 @@
                 <p>
                     <%voitures.forEach(function(datas){%>
                         <ul class="list-group mt-2">
-                            <li class="list-group-item disabled">
-                                <%= datas.marque%>
+                            <li class="list-group-item ">
+                               <p>(Marque de la voiture) <%= datas.marque%></p>
                             </li>
-                            <li class="list-group-item">
-                                <%= datas.img%>
+                            <li class="list-group-item" >
+                              <p>(Image de la voiture)  <%= datas.img%></p>
                             </li>
-                            <li class="list-group-item">
-                                <%= datas.puissance%>
+                            <li class="list-group-item" >
+                              <p>(Puissance de la voiture)  <%= datas.puissance%></p>
                             </li>
-                            <li class="list-group-item">
-                                <%= datas.motorisation%>
+                            <li class="list-group-item" >
+                              <p>(Motorisation de la voiture) <%= datas.motorisation%></p>
                             </li>
-                            <li class="list-group-item">
-                                <%= datas.prix%>
+                            <li class="list-group-item" >
+                              <p>(Prix de la voiture)  <%= datas.prix%></p>
                             </li>
                             <!-- <li class="list-group-item"><%= datas.couleur%></li> -->
-                            <li class="list-group-item">
-                                <%= datas.nbporte%>
+                            <li class="list-group-item" >
+                              <p><(Nombre de porte)   <%= datas.nbporte%>/p>
                             </li>
-                            <li class="list-group-item">
-                                <%= datas.nbplace%>
+                            <li class="list-group-item" >
+                              <p>(Nombre de place)  <%= datas.nbplace%></p>
                             </li>
                         </ul>
                 
@@ -50,7 +50,7 @@
                 </p>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Ajouter
   </button>
   
@@ -76,7 +76,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Ajouter</button>
+          <button type="button" id="btnmodal" class="btn btn-primary">Ajouter</button>
         </div>
       </div>
     </div>
