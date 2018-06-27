@@ -1,0 +1,22 @@
+{
+  "name": "gestion_voiture",
+  "version": "1.0.0",
+  "description": "to do :",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lisa9740/gestion-de-voiture-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lisa9740/gestion-de-voiture-/issues"
+  },
+  "homepage": "https://github.com/Lisa9740/gestion-de-voiture-#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
