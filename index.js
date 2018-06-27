@@ -37,6 +37,23 @@ function get_voitures(cb){
     });
 
 }
+app.post('/ajoutdonnees',function(req,res){
+    
+});
+//fonction pour ajouter des données à la liste des voitures 
+function add_voitures(cb){
+    MongoClient.connect(url, function (err, db) {
+        if (err) throw err;
+        var dbo = db.db("concession");
+        dbo.collection("voitures").insertOne({}).toArray(function (err, result) {
+            if (err) throw err;
+      
+            cb(result);
+            db.close();
+        });
+    });
+}
+
 
 
 app.use(express.static('static'));
