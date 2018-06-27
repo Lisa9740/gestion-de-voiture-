@@ -37,6 +37,8 @@ function get_voitures(cb){
     });
 
 }
+//fonction pour ajouter des données à la liste des voitures 
+
 
 
 app.use(express.static('static'));
