@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-var port = 3108;
+var port = 3189;
 var bodyParser = require('body-parser');
 const mongodb = require('mongodb');
 
@@ -68,6 +68,41 @@ app.post('/ajoutdonnees',function(req,res){
 
 })
 });
+
+app.put('/modifier',function(req,res){
+   
+    var _id = req.body._id;
+
+
+    //entrée de la bdd modifier
+        var marqueModif = req.body.marque;
+        var imgModif = req.body.img;
+        var puissanceModif = req.body.puissance;
+        var motorisationModif = req.body.motorisation;
+        var prixModif = req.body.prix;
+        var couleurModif = req.body.couleur;
+        var nbporteModif = req.body.nbporte;
+        var nbplaceModif = req.body.nbplace;
+        
+        entreModif = {"marque": marqueModif  , "img" : imgModif , "puissance": puissanceModif , "motorisation" : motorisationModif, "prix" : prixModif, "couleur": couleurModif, "nbporte" : nbporteModif," nbplace ": nbplaceModif}
+        MongoClient.connect(url, function (err, db) {
+            if (err) throw err;
+            var dbo = db.db("concession");
+            dbo.collection("voitures").updateOne({id: _id}, {$set : entreModif}),function (err, result) {
+                
+            if (err) throw err;
+    
+            res.send(result);
+            
+                
+                db.close();
+            }
+        
+    
+    
+    })
+    });
+    
 
 
 

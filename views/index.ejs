@@ -49,12 +49,19 @@
                         
                 </p>
 
-<!-- Button trigger modal -->
+<!-- Button trigger modal 1 -->
 <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Ajouter
   </button>
+
+  <!-- Button trigger modal 2 -->
+<button type="button"  class="btn btn-danger" data-toggle="modal" data-target="#exampleModal2">
+  Modifier
+</button>
+
+
   
-  <!-- Modal -->
+  <!-- Modal 1 -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -77,6 +84,40 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" id="btnmodal" class="btn btn-primary">Ajouter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> Modifier </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ">
+            <select id="marqueid">
+            <%voitures.forEach(function(datas){%>
+        <option label=<%= datas.marque%>> <%= datas._id%></option>
+        <%= datas.marque%>
+          <% }); %>
+        </select>
+            <input type="text" id="marque1" class="form-control mt-2" placeholder="marque" aria-label="marque" aria-describedby="basic-addon1">
+            <input type="text" id="img1" class="form-control mt-2" placeholder="img" aria-label="img" aria-describedby="basic-addon1">
+            <input type="text" id="puissance1" class="form-control mt-2" placeholder="puissance" aria-label="puissance" aria-describedby="basic-addon1">
+            <input type="text" id="motorisation1" class="form-control mt-2" placeholder="motorisation" aria-label="motorisation" aria-describedby="basic-addon1">
+            <input type="text" id="prix1" class="form-control mt-2" placeholder="prix" aria-label="prix" aria-describedby="basic-addon1">
+            <input type="text" id="couleur1" class="form-control mt-2" placeholder="couleur" aria-label="couleur" aria-describedby="basic-addon1">
+            <input type="text" id="nbporte1" class="form-control mt-2" placeholder="nbporte" aria-label="nbporte" aria-describedby="basic-addon1">
+            <input type="text" id="nbplace1" class="form-control mt-2" placeholder="nbplace" aria-label="nbplace" aria-describedby="basic-addon1">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="btnmodal2" class="btn btn-danger">Modifier</button>
         </div>
       </div>
     </div>
